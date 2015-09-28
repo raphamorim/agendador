@@ -1,0 +1,230 @@
+body {
+    background: #f1f1f1;
+    font: 87.5%/1.5em 'Lato', sans-serif;
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td {
+    padding: 0;
+}
+
+h1 {
+    font-size: 50px;
+    color: #E66B6B;
+    text-transform: uppercase;
+}
+
+h1 span {
+    color: green;
+}
+
+h4 { 
+    font-size: 18px;
+    color: #555;
+}
+
+.container {
+    height: 720px;
+    left: 50%;
+    margin: -300px 0 0 -300px;
+    position: absolute;
+    top: 40%;
+    width: 600px;
+}
+
+.calendar-container {
+    position: relative;
+    width: 450px;
+}
+
+.calendar-container header {
+    border-radius: 1em 1em 0 0;
+    background: #e66b6b;
+    color: #fff;
+    padding: 3em 2em;
+}
+
+.day {
+    font-size: 8em;
+    font-weight: 900;
+    line-height: 1em;
+}
+
+.month {
+    font-size: 4em;
+    line-height: 1em;
+    text-transform: lowercase;
+}
+
+.calendar {
+    background: #fff;
+    border-radius: 0 0 1em 1em;
+    -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+    color: #555;
+    display: inline-block;
+    padding: 2em;
+}
+
+.calendar thead {
+    color: #e66b6b;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.calendar td {
+    padding: .5em 1em;
+    text-align: center;
+}
+
+.calendar tbody td:hover {
+    background: #cacaca;
+    color: #fff;
+    cursor: pointer;
+}
+
+.current-day {
+    color: #e66b6b;
+}
+
+.prev-month,
+.next-month {
+    color: #cacaca;
+}
+
+.ring-left,
+.ring-right {
+    position: absolute;
+    top: 230px;
+}
+
+.ring-left { left: 2em; }
+.ring-right { right: 2em; }
+
+.ring-left:before,
+.ring-left:after,
+.ring-right:before,
+.ring-right:after {
+    background: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+    box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+    content: "";
+    display: inline-block;
+    margin: 8px;
+    height: 32px;
+    width: 8px;
+}
+
+
+/* Modal */
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700);
+.modal__background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+.modal__background:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.background {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #FF7300;
+  height: 100vh;
+  width: 100vw;
+}
+
+.button {
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  background: #fff;
+  border-radius: 4px;
+  color: #FF7300;
+  display: block;
+  font-family: Montserrat,sans-serif;
+  margin: auto;
+  padding: 1rem;
+  text-decoration: none;
+}
+.button:hover {
+  background: #008cff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+
+.modal__content {
+  background: #fff;
+  padding: 1rem;
+  position: relative;
+  z-index: 4;
+}
+@media screen and (max-width: 699px) {
+  .modal__content {
+    margin: 2rem;
+  }
+}
+@media screen and (min-width: 700px) {
+  .modal__content {
+    margin: 4rem auto;
+    max-width: 400px;
+    min-height: 300px;
+  }
+}
+.modal__content svg,
+.modal__content path {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  height: 25px;
+  width: 25px;
+  -webkit-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+  fill: #bfbfbf;
+}
+.modal__content svg:hover,
+.modal__content path:hover {
+  fill: #0c0c0c;
+}
+
+.modal__content h2 {
+  color: #008cff;
+  font-family: Montserrat,sans-serif;
+  font-size: 30px;
+  margin: 0rem 0 1rem;
+  text-align: center;
+}
+
+.modal__content-data p {
+    text-align: center;
+    font-size: 18px;
+}
+
+.button {
+    display: none;
+}
+
+.success {
+  width: 100%;
+}

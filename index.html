@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendador</title>
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<!-- Onde Estou? RJ pega JSON do RJ. Quer eventos de? festas/ workshops -->
+<body>
+    <div class="container">
+        <h1>Studi<span>on</span></h1>
+        <h4>É um facilitador entre estúdios de áudio e músicos, pois permite o agendamento de ensaios de forma rápida e online, com total controle e segurança.</h4>
+        <div class="calendar-container">
+            <header>
+                <div class="day">18</div>
+                <div class="month">Agosto</div>
+            </header>
+
+            <table class="calendar">
+                <thead>
+
+                    <tr>
+
+                        <td>Seg</td>
+                        <td>Ter</td>
+                        <td>Qua</td>
+                        <td>Qui</td>
+                        <td>Sex</td>
+                        <td>Sab</td>
+                        <td>Dom</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="prev-month">29</td>
+                        <td class="prev-month">30</td>
+                        <td class="prev-month">31</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+
+                    <tr>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td class="current-day">18</td>
+                    </tr>
+
+                    <tr>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                    </tr>
+
+                    <tr>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td class="next-month">1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="ring-left"></div>
+            <div class="ring-right"></div>
+        </div> <!-- end calendar-container -->
+    </div> <!-- end container -->
+    <a href="#open-modal" class="button"></a>
+    <div id="open-modal" class="modal__background"> 
+    <div class="modal__content">
+      <a href="#close" title="Close" class="close">
+      <svg x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<g id="Layer_3">
+    <path d="M34.421,24.02l13.318-13.268c0.188-0.187,0.294-0.44,0.294-0.706c0-0.266-0.104-0.52-0.292-0.708
+        l-8.983-9.018c-0.187-0.187-0.441-0.293-0.707-0.294c0,0-0.001,0-0.001,0c-0.265,0-0.519,0.104-0.706,0.292L24.027,13.587
+        L10.759,0.267c-0.187-0.187-0.441-0.293-0.707-0.294c0,0-0.001,0-0.001,0c-0.265,0-0.519,0.104-0.706,0.292L0.328,9.248
+        c-0.392,0.39-0.393,1.023-0.003,1.414L13.593,23.98L0.274,37.248c-0.391,0.39-0.392,1.023-0.003,1.414l8.983,9.018
+        c0.187,0.188,0.441,0.293,0.707,0.294h0.002c0.265,0,0.518-0.104,0.705-0.292l13.318-13.267l13.268,13.318
+        c0.195,0.196,0.452,0.294,0.708,0.294c0.255,0,0.511-0.097,0.706-0.292l9.017-8.982c0.392-0.39,0.393-1.022,0.003-1.414
+        L34.421,24.02z"/>
+</g>
+</svg>
+      </a>
+      <div class="modal__content-data"></div>
+    </div>
+    <script src="assets/app.js"></script>
+</body>
+</html>

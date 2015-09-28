@@ -2,9 +2,27 @@
 // Estúdio disponíveis
 // Função de login
 
-var busyDates = [1, 3, 14, 24],
+var busyDates = busyDays(),
     session = false,
     theDay = false;
+
+function busyDays(day) {
+    var newArr = [],
+        arr = (JSON.parse(getCookie('days')) || ["1", "3", "14", "24"]);
+
+    if (day)
+        arr.push("" + day + "")
+
+    // newArr = newArr.concat(arr);
+
+    var json_str = JSON.stringify(arr);
+    document.cookie = 'days='+json_str;
+
+    arr.forEach(function(a) {
+        newArr.push(parseInt(a, 10))
+    });
+    return newArr;
+}
 
 function getCookie(cname) {
     var name = cname + "=";
@@ -14,18 +32,20 @@ function getCookie(cname) {
         while (c.charAt(0)==' ') c = c.substring(1);
         if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
     }
-    return "";
+    return false;
 }
 
 function getSession() {
-    if (getCookie('email'))
+    if (getCookie('email')) {
+        document.querySelector('.loginState').innerHTML = "Bem vindo, <strong>" + getCookie('nome') + "</strong>";
         session = true;
-    else 
+    } else 
         session = false;
 }
 
 (function(){
     getSession();
+    console.log(busyDates)
 
     var today = document.querySelector('.current-day'),
         // today = new Date(),
@@ -60,10 +80,9 @@ function getSession() {
                             '<p><input type="password" class="senha" required placeholder="Senha"/></p>' +
                             '<p><a href="#" class="signup-btn">Cadastre-se</a></p>';
                             document.querySelector('.signup-btn').addEventListener('click', function() {
-                                var cookie = "email=" + document.querySelector('.email').value + 
-                                    "; senha=" + document.querySelector('.senha').value +
-                                    "; nome=" + document.querySelector('.nome').value;
-                                document.cookie = cookie;
+                                document.cookie = "email=" + document.querySelector('.email').value;
+                                document.cookie = "senha=" + document.querySelector('.senha').value;
+                                document.cookie = "nome=" + document.querySelector('.nome').value;
                                 location.reload();
                             });
                         });
@@ -79,6 +98,7 @@ function getSession() {
                         for (var i = 0; i < estudios.length; i++) {
                             var estudio = (estudios[i].innerText || estudios[i].textContent);
                             estudios[i].addEventListener('click', function() {
+                                busyDays(theDay)
                                 var c = document.querySelector('.container');
                                 c.innerHTML = '<h1>Parabéns!</h1><h4>Você agendou com ' + estudio + '. Aguarde para ter mais informações!</h4>';                            
                             });
